@@ -1,9 +1,10 @@
+from typing import Union
 from django.db import models
 # Create your models here.
 from django.utils.translation import gettext_lazy as _
 from django.contrib.auth.models import AbstractUser
 from utilities.helpers import generate_id
-
+from django.contrib.auth import get_user_model
 
 
 
@@ -27,6 +28,14 @@ class CustomUser(AbstractUser):
 
 
     
-    def generate_room(self,id:int,*args, **kwargs):
+    def generate_room(self,id:Union[int,str],*args, **kwargs):
+        if type(id) == str:
+            id = int(id)
         return "".join([str(n) for n in sorted([self.id,id])])
+
+
+    def get_receiver(self,room:str,*args, **kwargs):
+        receiver_id = int(room.replace(str(self.id),''))
+        return get_user_model().objects.get(id=receiver_id)
+        
         

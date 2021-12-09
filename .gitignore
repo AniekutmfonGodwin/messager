@@ -145,3 +145,4 @@ cython_debug/
 
 *.map
 *.bat
+*.rdb
