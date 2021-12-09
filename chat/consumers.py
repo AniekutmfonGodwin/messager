@@ -34,13 +34,13 @@ class ChatRoomConsumer(AsyncWebsocketConsumer):
 
 
             # send to group
-            await self.channel_layer.group_send(
-                self.room_group_name, 
-                {
-                    'type':'tester_message',
-                    'tester':'tester'
-                }
-            )
+            # await self.channel_layer.group_send(
+            #     self.room_group_name, 
+            #     {
+            #         'type':'tester_message',
+            #         'tester':'tester'
+            #     }
+            # )
 
             await self.accept()
         else:
@@ -52,13 +52,13 @@ class ChatRoomConsumer(AsyncWebsocketConsumer):
             
 
 
-    async def tester_message(self,event):
-        tester = event['tester']
+    # async def tester_message(self,event):
+    #     tester = event['tester']
         
 
-        await self.send(text_data=json.dumps({
-            'tester':tester
-        }))
+    #     await self.send(text_data=json.dumps({
+    #         'tester':tester
+    #     }))
 
 
     async def disconnect(self, close_code):
