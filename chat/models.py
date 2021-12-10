@@ -34,6 +34,11 @@ class Message(BaseModelMixin):
 
     def __str__(self):
         return f"from: {self.sender.email} to: {self.receiver.email}"
+    
+    def read(self):
+        self.__dict__.update(status=MessageStatus.READ.value)
+        self.save()
+        return self
 
     # def get_absolute_url(self):
     #     return reverse("Message_detail", kwargs={"pk": self.pk})
