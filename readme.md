@@ -1,5 +1,5 @@
 # websocket endpoint
-    /ws/chat/{receiver_id}/
+    /ws/chat/{receiver_id}/?token=<auth_token>
 
 ## Step to run messenger app
 #### create a virtual enviroment and install dependencies
