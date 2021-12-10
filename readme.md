@@ -12,3 +12,5 @@
 
 #### run development server
     python manage.py runserver
+
+#### [postman collection](./django_messenger.postman_collection.json)
