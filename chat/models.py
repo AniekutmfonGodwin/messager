@@ -40,6 +40,8 @@ class Message(BaseModelMixin):
         self.save()
         return self
 
+    
+
     # def get_absolute_url(self):
     #     return reverse("Message_detail", kwargs={"pk": self.pk})
 

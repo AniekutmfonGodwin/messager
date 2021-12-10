@@ -16,6 +16,7 @@ class BaseEnum(Enum):
 
 
 
+
 class MessageStatus(BaseEnum):
     
     READ = "READ"

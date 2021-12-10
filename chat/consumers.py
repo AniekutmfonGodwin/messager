@@ -144,7 +144,7 @@ class ChatRoomConsumer(AsyncWebsocketConsumer):
             created_at = str(message.created_at)
         )
         
-
+    
 
 
     # Receive message from room group
@@ -188,6 +188,9 @@ class ChatRoomConsumer(AsyncWebsocketConsumer):
         await self.send(text_data=json.dumps({
             'message': "pong"
         }))
+
+
+    
         
 
         

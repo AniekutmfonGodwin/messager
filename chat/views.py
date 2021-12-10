@@ -75,7 +75,7 @@ class ChatDetailView(generics.UpdateAPIView):
 
 
 
-
+    
 
     def put(self,request,*args, **kwargs):
         

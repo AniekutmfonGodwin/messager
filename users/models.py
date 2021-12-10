@@ -35,7 +35,8 @@ class CustomUser(AbstractUser):
 
 
     def get_receiver(self,room:str,*args, **kwargs):
-        receiver_id = int(room.replace(str(self.id),''))
+        receiver_id_str = room.replace(str(self.id),'')
+        receiver_id = int(room.replace(str(self.id),'')) if receiver_id_str else self.id
         return get_user_model().objects.get(id=receiver_id)
         
         
