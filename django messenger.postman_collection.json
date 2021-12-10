@@ -1,0 +1,412 @@
+{
+	"info": {
+		"_postman_id": "8f08adf5-4911-4781-b4d7-3e453dda6865",
+		"name": "django messenger",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"{{username}}\",\r\n    \"email\":\"{{email}}\",\r\n    \"password\":\"{{password}}\",\r\n    \"re_password\":\"{{password}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/auth/users/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"auth",
+								"users",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "create",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\":\"{{username}}\",\r\n    \"email\":\"{{email}}\",\r\n    \"password\":\"{{password}}\",\r\n    \"re_password\":\"{{password}}\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/auth/users/",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"auth",
+										"users",
+										""
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, POST, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "63"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"username\": \"Anies\",\n    \"email\": \"user1l@gmail.com\",\n    \"id\": 2444480842\n}"
+						}
+					]
+				},
+				{
+					"name": "login",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"{{email}}\",\r\n    \"password\":\"{{password}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/auth/token/login/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"auth",
+								"token",
+								"login",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "users",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"{{email}}\",\r\n    \"password\":\"{{password}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/auth/users/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"auth",
+								"users",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logout",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"{{email}}\",\r\n    \"password\":\"{{password}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/auth/token/logout/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"auth",
+								"token",
+								"logout",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "chat",
+			"item": [
+				{
+					"name": "message update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"status\":\"READ\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/chat/message/:id/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"chat",
+								"message",
+								":id",
+								""
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "12"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "message list",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"status\":\"READ\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/chat/message/:id/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"chat",
+								"message",
+								":id",
+								""
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "12"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "message list",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"status\":\"READ\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/chat/message/",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"chat",
+										"message",
+										""
+									],
+									"query": [
+										{
+											"key": "receiver",
+											"value": "3077842521",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "582"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"count\": 3,\n    \"next\": null,\n    \"previous\": null,\n    \"results\": [\n        {\n            \"id\": 2528544341,\n            \"body\": \"hello\",\n            \"sender\": 1058873494,\n            \"receiver\": 3077842521,\n            \"status\": \"SEND\",\n            \"updated_at\": \"2021-12-09T23:15:39.280064Z\",\n            \"created_at\": \"2021-12-09T23:15:39.280064Z\"\n        },\n        {\n            \"id\": 1050061939,\n            \"body\": \"hello\",\n            \"sender\": 1058873494,\n            \"receiver\": 3077842521,\n            \"status\": \"READ\",\n            \"updated_at\": \"2021-12-09T23:22:16.421900Z\",\n            \"created_at\": \"2021-12-09T23:15:40.087006Z\"\n        },\n        {\n            \"id\": 1688683958,\n            \"body\": \"hello\",\n            \"sender\": 1058873494,\n            \"receiver\": 3077842521,\n            \"status\": \"SEND\",\n            \"updated_at\": \"2021-12-09T23:15:41.407104Z\",\n            \"created_at\": \"2021-12-09T23:15:41.407104Z\"\n        }\n    ]\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "apikey",
+		"apikey": [
+			{
+				"key": "value",
+				"value": "token {{token}}",
+				"type": "string"
+			},
+			{
+				"key": "key",
+				"value": "Authorization",
+				"type": "string"
+			},
+			{
+				"key": "in",
+				"value": "header",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "http://127.0.0.1:8000/v1/api"
+		},
+		{
+			"key": "email",
+			"value": ""
+		},
+		{
+			"key": "password",
+			"value": ""
+		},
+		{
+			"key": "token",
+			"value": ""
+		},
+		{
+			"key": "username",
+			"value": ""
+		}
+	]
+}
